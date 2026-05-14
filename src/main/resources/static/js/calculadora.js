@@ -1,13 +1,13 @@
-// Función que agrega dígitos al display
+
 function setDigito(digito) {
     let display = document.getElementById('display');
-
     if (display.value === "0") {
         display.value = digito;
     } else {
         display.value = display.value + digito;
     }
 }
+
 
 function setOperador(operador) {
     let display = document.getElementById('display');
@@ -24,6 +24,7 @@ function borrar() {
 
 function obtenerResultado() {
     let display = document.getElementById('display');
+
     try {
         display.value = eval(display.value);
     } catch (error) {
@@ -47,7 +48,7 @@ function calcularLog() {
 
     try {
         let numero = eval(display.value);
-        display.value = Math.log10(numero);
+        display.value = Math.log(numero);
     } catch (error) {
         display.value = "Error";
     }
@@ -55,5 +56,15 @@ function calcularLog() {
 
 function potencia() {
     let display = document.getElementById('display');
-    display.value = display.value + "**";
+
+    try {
+
+        let base = eval(display.value);
+        let exponente = prompt("Ingrese el exponente:");
+        if (exponente !== null) {
+            display.value = Math.pow(base, exponente);
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
 }
