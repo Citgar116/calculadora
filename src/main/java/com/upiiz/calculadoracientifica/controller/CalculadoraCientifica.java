@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class CalculadoraCientifica {
 
-    @GetMapping("/cientifica")
+    @GetMapping("/")
     public String cientifica(){
         return "cientifica";
     }
